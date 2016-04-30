@@ -1,0 +1,17 @@
+
+public class time {
+	private int hour;
+	private int minute;
+	private int second;
+    public void setTime (int h, int m, int s) {
+    	hour = h;
+    	minute = m;
+    	second = s;
+    }
+    public String militaryTime () {  //formated String
+    	return String.format ("%02d:%02d:%02d", hour, minute, second); 
+    }
+    public String regularTime () {
+    	return String.format("%02d:%02d:%02d %s", hour%12 == 0 ? 12 : hour%12, minute, second, hour>12 ? "PM" : "AM");
+    }
+}
